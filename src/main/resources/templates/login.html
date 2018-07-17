@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header>
+		<h2>Message : <span th:utext="${message}"></span></h2>
+      	<!--  <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">..</span>-->
+	
+	</header>
+	<nav>
+		<!-- Include _menu.html -->
+		<th:block th:include="/_menu"></th:block>  
+       
+      	
+	
+	</nav>
+	<section>
+		
+		<form th:action="@{/login}" method="POST">
+			
+			<table>
+				<tr>
+					<td>Username</td>
+					<td><input type="text" name="username"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Login"></td>
+				</tr>
+			</table>
+		</form>
+		
+		
+		
+	
+	</section>
+	
+      
+</body>
+</html>

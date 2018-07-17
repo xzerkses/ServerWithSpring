@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<header>
+      <h2><span th:utext="${message}"></span></h2>
+      
+    </header>
+    <section>
+	<nav>
+		<!-- Include _menu.html -->
+	      <th:block th:include="/_menu"></th:block>  
+    </nav>
+    </section>
+      
+</body>
+</html>

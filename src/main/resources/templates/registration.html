@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<header>
+		<h1>Registration</h1>
+	</header>
+	<nav>
+		<!-- Include _menu.html -->
+	      <th:block th:include="/_menu"></th:block>  
+	       
+	      <h2>Message : <span th:utext="${message}"></span></h2>
+	</nav>
+	<section>
+		
+		<form th:action="@{/registration}" th:object="${userForm}" method="POST">
+			<table>
+				<tr>
+					<td>User Name</td>
+     				<td><input type="text" th:field="*{username}"/></td>
+     				<td>
+     					<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">..</span>
+     				</td>
+     			</tr>
+     			<tr>
+					<td>Email</td>
+     				<td><input type="text" th:field="*{email}"/></td>
+     				<td>
+     					<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">..</span>
+     				</td>
+     			</tr>
+     			
+     			<tr>
+					<td>Password</td>
+     				<td><input type="text" th:field="*{password}"/></td>
+     				<td>
+     					<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">..</span>
+     				</td>
+     			</tr>
+     			<tr>
+					<td>Confirm Password</td>
+     				<td><input type="text" th:field="*{passwordConfirm}"/></td>
+     				<td>
+     					<span th:if="${#fields.hasErrors('passwordConfirm')}" th:errors="*{passwordConfirm}">..</span>
+     				</td>
+     			</tr>
+     			
+				
+				
+			
+			</table>
+			<input type="submit" value="Register">
+		
+		 </form>
+	
+	</section>
+	
+</body>
+</html>
